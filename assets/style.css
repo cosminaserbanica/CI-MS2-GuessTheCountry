@@ -4,6 +4,7 @@ img {
   margin: 0;
   background-size: cover;
   position: fixed;
+  filter: hue-rotate(90deg) brightness(80%) grayscale(10%);
 }
 
 .menu {
@@ -20,11 +21,11 @@ ul{
 
 li {
   padding: 20px;
-  background-image: linear-gradient(to bottom right, rgb(124, 124, 148), rgb(165, 55, 55));
+  background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
   opacity: 0.8;
   text-align: center;
   font-size: 24px;
-  color: black;
+  color: rgb(205, 235, 197);
   font-weight: bold;
   margin: 25px;
   border-radius: 20px;
