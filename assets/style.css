@@ -24,9 +24,13 @@ li {
   background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
   opacity: 0.8;
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
   color: rgb(205, 235, 197);
   font-weight: bold;
   margin: 25px;
   border-radius: 20px;
+}
+
+i {
+  margin-right: 12px;
 }
