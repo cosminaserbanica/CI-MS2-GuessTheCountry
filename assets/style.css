@@ -7,7 +7,7 @@ img {
   filter: hue-rotate(90deg) brightness(80%) grayscale(10%);
 }
 
-.menu {
+.menu ul {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -33,4 +33,12 @@ li {
 
 i {
   margin-right: 12px;
+}
+
+.menu svg {
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, -10%);
 }
