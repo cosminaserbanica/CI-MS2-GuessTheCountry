@@ -19,7 +19,7 @@ ul{
   list-style-type: none;
 }
 
-li {
+.main-menu {
   padding: 20px;
   background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
   opacity: 0.8;
@@ -41,4 +41,30 @@ i {
   left: 50%;
   top: 5%;
   transform: translate(-50%, -10%);
+}
+
+footer {
+  background-color: #4A563D;
+  position: fixed;
+  width: 100%;
+  bottom: 0%;
+}
+
+/* Social Media Styling */
+.social-icons {
+  text-align: center;
+  margin-bottom: 0px; 
+}
+
+.social-icons li {
+  display: inline;
+}
+
+.social-icons i {
+  color: white;
+  padding:23px;
+}
+
+.social-icons i:hover {
+  color: purple;
 }
