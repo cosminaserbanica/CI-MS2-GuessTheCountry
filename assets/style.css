@@ -31,6 +31,11 @@ ul{
   border-radius: 20px;
 }
 
+.main-menu:hover {
+  color: #4A563D;
+  cursor: pointer;
+}
+
 i {
   margin-right: 12px;
 }
@@ -70,3 +75,6 @@ footer {
 .social-icons i:hover {
   color: purple;
 }
+
+/* Modal container styling */
+
