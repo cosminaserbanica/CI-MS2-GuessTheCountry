@@ -92,7 +92,8 @@ footer {
 .play-modal {
   background-color:#4A563D;
   border-radius: 15px;
-  width: 28%;
+  width: 600px;
+  max-width: 100%;
   z-index: inherit;
   border: 5px solid rgb(153, 97, 153);
 }
