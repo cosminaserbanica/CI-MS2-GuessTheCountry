@@ -70,7 +70,7 @@
     <div class="play-modal-container" id="modal1">
       <div class="play-modal col-12 col-sm-12 col-md-6 col-lg-4">
         <p class="close-modal"><i class="fas fa-times-circle" id="close-modal1"></i></p>
-        <ul class="play-list">
+        <ul class="play-list" style="margin-top: 40px;">
           <li class="play-options">Guess the country</li>
           <li class="play-options">Guess the capital</li>
         </ul>
@@ -79,13 +79,33 @@
     <div class="instructions-modal-container" id="modal2">
       <div class="instructions-modal col-12 col-sm-12 col-md-6 col-lg-4">
         <p class="close-modal"><i class="fas fa-times-circle" id="close-modal2"></i></p>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p style="margin-top: 40px;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
       </div>
     </div>
-    <div class="contact-modal-container" id="modal1">
-      <div class="contact-modal col-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="contact-modal-container" id="modal3">
+      <div class="contact-modal col-12 col-sm-12 col-md-6 col-lg-4" style= "overflow-y: scroll;">
         <p class="close-modal"><i class="fas fa-times-circle" id="close-modal3"></i></p>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <form class = "col-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="row">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="First name" required>
+          </div>
+          <div class="row">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control"  id="lastName" placeholder="Last name" required>
+          </div>
+          <div class="row">
+            <label for="emaiAddress">Email Address</label>
+            <input type="email" class="form-control" id="emailAddress" placeholder="Email Address" required>
+          </div>
+          <div class="row">
+            <label for="message">Your Message</label>
+            <input type="textarea" class="form-control" id="message" placeholder="Your message here" required>
+          </div>
+          <div class="row" id="submit">
+            <input type= "submit" id="submit-btn">
+          </div>
+        </form>
       </div>
     </div>
     
