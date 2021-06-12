@@ -4,7 +4,7 @@ img {
   margin: 0;
   background-size: cover;
   position: fixed;
-  filter: hue-rotate(50deg) brightness(80%) ;
+  filter: hue-rotate(50deg) brightness(100%) ;
 }
 
 .menu ul {
@@ -178,5 +178,11 @@ input {
 
 #submit-btn:hover {
   color: #4A563D;
+  cursor: pointer;
+}
+
+path:hover{
+  stroke: rgb(23, 110, 192);
+  stroke-width: 2px;
   cursor: pointer;
 }
