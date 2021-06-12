@@ -117,7 +117,7 @@ footer {
   pointer-events: auto;
 }
 
-.play-modal, .instructions-modal, .contact-modal {
+.play-modal, .instructions-modal, .contact-modal{
   background-color:#4A563D;
   border-radius: 15px;
   width: 600px;
@@ -185,4 +185,21 @@ path:hover{
   stroke: rgb(23, 110, 192);
   stroke-width: 2px;
   cursor: pointer;
+}
+
+.quiz-modal {
+  background-color:#4A563D;
+  border-radius: 15px;
+  margin-top: 30px;
+  z-index: inherit;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid rgb(153, 97, 153);
+}
+
+@media screen and (min-width: 1024px) {
+  .quiz-modal {
+    margin-top: 250px;
+  }
 }
