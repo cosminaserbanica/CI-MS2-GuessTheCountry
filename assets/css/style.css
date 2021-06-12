@@ -105,16 +105,19 @@ footer {
 .play-modal-container.show-modal {
   opacity: 1;
   pointer-events: auto;
+  background-color: rgb(41, 40, 40, 0.7);
 }
 
 .instructions-modal-container.show-modal {
   opacity: 1;
   pointer-events: auto;
+  background-color: rgb(41, 40, 40, 0.7);
 }
 
 .contact-modal-container.show-modal{
   opacity: 1;
   pointer-events: auto;
+  background-color: rgb(41, 40, 40, 0.7);
 }
 
 .play-modal, .instructions-modal, .contact-modal{
