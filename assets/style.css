@@ -190,7 +190,7 @@ path:hover{
 .quiz-modal {
   background-color:#4A563D;
   border-radius: 15px;
-  margin-top: 30px;
+  margin-top: 20px;
   z-index: inherit;
   text-align: center;
   align-items: center;
@@ -198,8 +198,22 @@ path:hover{
   border: 5px solid rgb(153, 97, 153);
 }
 
+.question {
+  color: white;
+  font-weight: bolder;
+}
+
+.answers-options {
+  padding: 15px;
+  background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
+  margin: 5px;
+  border-radius: 10px;
+  color: white;
+}
+
 @media screen and (min-width: 1024px) {
   .quiz-modal {
-    margin-top: 250px;
+    margin-top: 150px;
+    margin-right: 20px;
   }
 }
