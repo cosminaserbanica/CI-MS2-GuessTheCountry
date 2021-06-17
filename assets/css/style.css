@@ -199,8 +199,11 @@ path:hover{
   align-items: center;
   justify-content: center;
   border: 5px solid rgb(153, 97, 153);
+  overflow: hidden;
+  overflow-y: auto;
   opacity: 0;
 }
+
 
 .question {
   color: white;
@@ -208,7 +211,7 @@ path:hover{
 }
 
 .answers-options {
-  padding: 15px;
+  padding: 10px;
   background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
   margin: 5px;
   border-radius: 10px;
@@ -229,12 +232,46 @@ path:hover{
   vertical-align: middle;
 }
 
+#time-left {
+  font-size: 50px;
+  color: #fff;
+  text-shadow: purple;
+  overflow: hidden;
+}
+
+.time-left-animation {
+  animation: pulse 1000ms infinite;
+}
+
+@keyframes pulse {
+  0% {
+    font-size: 50px;
+  }
+  100% {
+    font-size: 100px;
+  }
+}
+
+.quiz-area { 
+  text-align: center;
+}
+
 @media screen and (min-width: 991px) {
-  .quiz-modal {
-    margin-top: 150px;
-    margin-right: 20px;
+  .quiz-area {
+    margin-top: 10%;
   }
-  #start-game {
-    margin-top: 200px;
-  }
+}
+
+.container, .row {
+  margin: 0 !important;
+}
+
+.col-lg-12, .col-lg-6 {
+  padding: 0 !important;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #4A563D;
 }
