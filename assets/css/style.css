@@ -29,7 +29,7 @@ a:hover {
   text-decoration: none;
 }
 
-.main-menu, .play-options {
+.main-menu {
   padding: 20px;
   background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
   opacity: 0.8;
@@ -41,7 +41,7 @@ a:hover {
   border-radius: 20px;
 }
 
-.main-menu:hover, .play-options:hover {
+.main-menu:hover {
   color: #4A563D;
   cursor: pointer;
 }
@@ -87,7 +87,7 @@ footer {
 }
 
 /* Modal container styling */
-.play-modal-container, .instructions-modal-container, .contact-modal-container{
+.instructions-modal-container, .contact-modal-container{
   position: fixed;
   display: flex;
   align-items: center;
@@ -102,12 +102,6 @@ footer {
   height: 100vh;
 }
 
-.play-modal-container.show-modal {
-  opacity: 1;
-  pointer-events: auto;
-  background-color: rgb(41, 40, 40, 0.7);
-}
-
 .instructions-modal-container.show-modal {
   opacity: 1;
   pointer-events: auto;
@@ -120,7 +114,7 @@ footer {
   background-color: rgb(41, 40, 40, 0.7);
 }
 
-.play-modal, .instructions-modal, .contact-modal{
+.instructions-modal, .contact-modal{
   background-color:#4A563D;
   border-radius: 15px;
   width: 600px;
@@ -135,9 +129,6 @@ footer {
   overflow-y: auto;
 }
 
-.play-options {
-  margin-left: 2px;
-}
 
 .close-modal {
   font-size: 25px;
@@ -184,14 +175,8 @@ input {
   cursor: pointer;
 }
 
-path:hover{
-  stroke: rgb(23, 110, 192);
-  stroke-width: 2px;
-  cursor: pointer;
-}
-
 .quiz-modal {
-  background-color:#4A563D;
+  background-color: grey;
   border-radius: 15px;
   margin-top: 20px;
   z-index: inherit;
@@ -205,18 +190,33 @@ path:hover{
 }
 
 
-.question {
+#question {
   color: white;
-  font-weight: bolder;
+  font-size: 1.1rem;
 }
 
-.answers-options {
-  padding: 10px;
+.choice-container {
   background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
-  margin: 5px;
+  display: flex;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 1.1rem;
+  border: 0.1rem solid rgb(86, 165, 35, 0.25);
   border-radius: 10px;
   color: white;
+  justify-content: center;
 }
+
+.choice-container:hover {
+  cursor: pointer;
+  color: #4A563D;
+}
+
+.choice-prefix, .choice-text {
+  margin: 0.2rem;
+  padding: 0.4rem;
+}
+
 
 #start-game {
   padding: 20px;
@@ -228,7 +228,7 @@ path:hover{
   font-weight: bold;
   margin: 25px;
   border-radius: 20px;
-  border: none;
+  outline: none !important;
   vertical-align: middle;
 }
 
@@ -273,5 +273,5 @@ path:hover{
 body{
   margin: 0;
   padding: 0;
-  background-color: #4A563D;
+  background-color: rgb(122, 167, 182);
 }
