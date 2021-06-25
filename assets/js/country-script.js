@@ -10,6 +10,7 @@ function countDown(){
       clearInterval(timeLeft = 1) //Try to simplify
       timeLeftDisplay.style.display = "none";
       quizModal.style.opacity='1';
+      
     }
     startGame.style.display = "none";
     timeLeftDisplay.innerHTML = timeLeft
@@ -21,10 +22,20 @@ function countDown(){
 
 startGame.addEventListener('click', countDown);
 
-const questionsList = [
+const question = document.getElementById('question');
+const answers = Array.from(document.getElementsByClassName('choice-text'));
+console.log(answers)
+
+let currentQuestion = {};
+let acceptingAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+
+let questionsList = [
   {
     "id": "Vector_1",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "United Kingdom",
     "answer2": "Ireland",
@@ -34,7 +45,7 @@ const questionsList = [
 
   {
     "id": "Vector_2",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 3,
     "answer1": "Norway",
     "answer2": "Denmark",
@@ -44,7 +55,7 @@ const questionsList = [
 
   {
     "id": "Vector_3",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Belarus",
     "answer2": "Ukraine",
@@ -54,7 +65,7 @@ const questionsList = [
 
   {
     "id": "Vector_4",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 4,
     "answer1": "Croatia",
     "answer2": "Hungary",
@@ -64,7 +75,7 @@ const questionsList = [
 
   {
     "id": "Vector_5",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Slovakia",
     "answer2": "Albania",
@@ -74,7 +85,7 @@ const questionsList = [
 
   {
     "id": "Vector_6",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Greece",
     "answer2": "North Macedonia",
@@ -84,7 +95,7 @@ const questionsList = [
 
   {
     "id": "Vector_7",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 3,
     "answer1": "Turkey",
     "answer2": "Greece",
@@ -94,7 +105,7 @@ const questionsList = [
 
   {
     "id": "Vector_8",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Serbia",
     "answer2": "Slovenia",
@@ -104,7 +115,7 @@ const questionsList = [
 
   {
     "id": "Vector_9",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 4,
     "answer1": "Ukraine",
     "answer2": "Romania",
@@ -114,7 +125,7 @@ const questionsList = [
 
   {
     "id": "Vector_10",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Serbia",
     "answer2": "Montenegro",
@@ -124,7 +135,7 @@ const questionsList = [
 
   {
     "id": "Vector_11",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Portugal",
     "answer2": "Spain",
@@ -134,7 +145,7 @@ const questionsList = [
 
   {
     "id": "Vector_12",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "United Kingdom",
     "answer2": "Ireland",
@@ -144,7 +155,7 @@ const questionsList = [
   
   {
     "id": "Vector_13",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 4,
     "answer1": "Switzerland",
     "answer2": "Liechtenstein",
@@ -154,7 +165,7 @@ const questionsList = [
 
   {
     "id": "Vector_14",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Czech Republic",
     "answer2": "Austria",
@@ -164,7 +175,7 @@ const questionsList = [
 
   {
     "id": "Vector_15",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Albania",
     "answer2": "Italy",
@@ -174,7 +185,7 @@ const questionsList = [
 
   {
     "id": "Vector_16",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 3,
     "answer1": "Lithuania",
     "answer2": "Croatia",
@@ -184,7 +195,7 @@ const questionsList = [
 
   {
     "id": "Vector_17",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 3,
     "answer1": "Estonia",
     "answer2": "Ireland",
@@ -194,7 +205,7 @@ const questionsList = [
 
   {
     "id": "Vector_18",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Latvia",
     "answer2": "Estonia",
@@ -204,7 +215,7 @@ const questionsList = [
 
   {
     "id": "Vector_19",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 4,
     "answer1": "Belgium",
     "answer2": "Luxembourg",
@@ -214,7 +225,7 @@ const questionsList = [
 
   {
     "id": "Vector_20",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Switzerland",
     "answer2": "Czech Republic",
@@ -224,7 +235,7 @@ const questionsList = [
 
   {
     "id": "Vector_21",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 3,
     "answer1": "Hungary",
     "answer2": "Albania",
@@ -234,7 +245,7 @@ const questionsList = [
 
   {
     "id": "Vector_22",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Poland",
     "answer2": "Belarus",
@@ -244,7 +255,7 @@ const questionsList = [
 
   {
     "id": "Vector_23",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 3,
     "answer1": "Bulgaria",
     "answer2": "Ukraine",
@@ -254,7 +265,7 @@ const questionsList = [
 
   {
     "id": "Vector_24",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Netherlands",
     "answer2": "Luxembourg",
@@ -264,7 +275,7 @@ const questionsList = [
 
   {
     "id": "Vector_25",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Latvia",
     "answer2": "Lithuania",
@@ -274,7 +285,7 @@ const questionsList = [
 
   {
     "id": "Vector_26",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Latvia",
     "answer2": "Lithuania",
@@ -284,7 +295,7 @@ const questionsList = [
 
   {
     "id": "Vector_27",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 4,
     "answer1": "Andorra",
     "answer2": "Luxembourg",
@@ -294,7 +305,7 @@ const questionsList = [
 
   {
     "id": "Vector_28",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Cyprus",
     "answer2": "Turkey",
@@ -304,7 +315,7 @@ const questionsList = [
 
   {
     "id": "Vector_29",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 3,
     "answer1": "Latvia",
     "answer2": "Sweden",
@@ -314,7 +325,7 @@ const questionsList = [
 
   {
     "id": "Vector_30",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "United Kingdom",
     "answer2": "Portugal",
@@ -324,7 +335,7 @@ const questionsList = [
 
   {
     "id": "Vector_31",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Netherlands",
     "answer2": "Denmark",
@@ -334,7 +345,7 @@ const questionsList = [
 
   {
     "id": "Vector_32",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Albania",
     "answer2": "Greece",
@@ -344,7 +355,7 @@ const questionsList = [
 
   {
     "id": "Vector_33",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Belarus",
     "answer2": "Latvia",
@@ -354,7 +365,7 @@ const questionsList = [
 
   {
     "id": "Vector_34",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Finland",
     "answer2": "Norway",
@@ -364,7 +375,7 @@ const questionsList = [
 
   {
     "id": "Vector_35",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Romania",
     "answer2": "Hungary",
@@ -374,6 +385,7 @@ const questionsList = [
 
   {
     "id": "Vector_36",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 3,
     "answer1": "Kosovo",
     "answer2": "Albania",
@@ -383,7 +395,7 @@ const questionsList = [
 
   {
     "id": "Vector_37",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Poland",
     "answer2": "Germany",
@@ -393,7 +405,7 @@ const questionsList = [
 
   {
     "id": "Vector_38",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 4,
     "answer1": "Serbia",
     "answer2": "Greece",
@@ -403,7 +415,7 @@ const questionsList = [
 
   {
     "id": "Vector_39",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Belgium",
     "answer2": "Denmark",
@@ -413,7 +425,7 @@ const questionsList = [
 
   {
     "id": "Vector_40",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 1,
     "answer1": "Bulgaria",
     "answer2": "Austria",
@@ -423,7 +435,7 @@ const questionsList = [
 
   {
     "id": "Vector_41",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 4,
     "answer1": "Poland",
     "answer2": "Spain",
@@ -433,7 +445,7 @@ const questionsList = [
 
   {
     "id": "Vector_42",
-    "question": "The country highlighted in yellow is...",
+    "question": "The country highlighted in yellow is:",
     "correctAnswer": 2,
     "answer1": "Netherlands",
     "answer2": "Belgium",
@@ -442,11 +454,29 @@ const questionsList = [
   }
 ]
 
-const question = document.getElementById('question');
-const choices = Array.from(document.getElementsByClassName('choice-text'));
+//CONSTANTS
 
-let currentQuestion = {};
-let acceptingAnswers = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestions = [];
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 42;
+
+playGame = () => {
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questionsList];
+  console.log(availableQuestions);
+  getNewQuestion();
+};
+
+getNewQuestion = () => {
+  questionCounter++;
+  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  currentQuestion = availableQuestions[questionIndex];
+  question.innerText = currentQuestion.question;
+
+  answers.forEach(answer => {
+    const number = answer.dataset["number"];
+    answer.innerText = currentQuestion["answer" + number];
+  });
+};
+
+playGame();
