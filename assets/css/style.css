@@ -217,6 +217,10 @@ input {
   padding: 0.4rem;
 }
 
+.choice-text {
+  width: 100%;
+}
+
 
 #start-game {
   padding: 20px;
