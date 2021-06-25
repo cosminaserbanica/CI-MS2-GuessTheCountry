@@ -27,7 +27,7 @@ const answers = Array.from(document.getElementsByClassName('choice-text'));
 console.log(answers)
 
 let currentQuestion = {};
-let acceptingAnswers = true;
+let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
@@ -469,6 +469,10 @@ playGame = () => {
 };
 
 getNewQuestion = () => {
+  if (availableQuestions.length === 0 || questionCounter>= MAX_QUESTIONS){
+    //go to the end page
+    return window.location.assign("/end.html");
+  }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
@@ -479,13 +483,28 @@ getNewQuestion = () => {
     const number = answer.dataset["number"];
     answer.innerText = currentQuestion["answer" + number];
   });
+  
+  availableQuestions.splice(questionIndex, 1);
+
+  acceptingAnswers = true;
 };
 
 let currentVector;
-
 function colorCountry (vectorNumber) {
   vectorNumber = vectorNumber + 1
   currentVector = document.querySelector("#Vector_" + vectorNumber).style.fill= "yellow";
 };
+
+answers.forEach(answer => {
+  answer.addEventListener('click', e => {
+    if(!acceptingAnswers) return;
+
+    acceptingAnswers = "false";
+
+    const selectedChoice = e.target;
+    const selectedAnswer = selectedChoice.dataset["number"];
+    getNewQuestion();
+  })
+})
 
 playGame();
