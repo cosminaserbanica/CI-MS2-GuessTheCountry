@@ -465,6 +465,7 @@ playGame = () => {
   availableQuestions = [...questionsList];
   console.log(availableQuestions);
   getNewQuestion();
+  
 };
 
 getNewQuestion = () => {
@@ -472,11 +473,19 @@ getNewQuestion = () => {
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
-
+  colorCountry(questionIndex);
+  
   answers.forEach(answer => {
     const number = answer.dataset["number"];
     answer.innerText = currentQuestion["answer" + number];
   });
+};
+
+let currentVector;
+
+function colorCountry (vectorNumber) {
+  vectorNumber = vectorNumber + 1
+  currentVector = document.querySelector("#Vector_" + vectorNumber).style.fill= "yellow";
 };
 
 playGame();
