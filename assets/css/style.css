@@ -217,11 +217,6 @@ input {
   justify-content: center;
 }
 
-.choice-container:hover {
-  cursor: pointer;
-  color: #4A563D;
-}
-
 .choice-prefix, .choice-text {
   margin: 0.2rem;
   padding: 0.4rem;
@@ -257,9 +252,14 @@ input {
   text-align: center;
 }
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 1025px) {
   .quiz-area {
     margin-top: 10%;
+  }
+
+  .choice-container:hover {
+    cursor: pointer;
+    color: #4A563D;
   }
 }
 
