@@ -195,7 +195,7 @@ input {
   justify-content: center;
   border: 5px solid rgb(153, 97, 153);
   overflow: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   opacity: 0;
 }
 
