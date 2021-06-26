@@ -1,30 +1,28 @@
+document.addEventListener('DOMContentLoaded', countDown);
+
 // Variables for countdown
 const timeLeftDisplay = document.querySelector('#time-left');
-const startGame = document.querySelector('#start-game');
 const quizModal = document.querySelector('.quiz-modal');
+const quizMap = document.querySelector('#Europe');
+
 let timeLeft = 3;
 
 function countDown(){
   setInterval(function(){
     if (timeLeft <= 0 ) {
-      clearInterval(timeLeft = 1) //Try to simplify
+      clearInterval(timeLeft = 1)
       timeLeftDisplay.style.display = "none";
       quizModal.style.opacity='1';
-      
+      quizMap.style.opacity='1';
     }
-    startGame.style.display = "none";
     timeLeftDisplay.innerHTML = timeLeft
     timeLeft -=1
     timeLeftDisplay.classList.add('time-left-animation')
   }, 1000)
-
 }
-
-startGame.addEventListener('click', countDown);
 
 const question = document.getElementById('question');
 const answers = Array.from(document.getElementsByClassName('choice-text'));
-console.log(answers)
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -463,9 +461,7 @@ playGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questionsList];
-  console.log(availableQuestions);
   getNewQuestion();
-  
 };
 
 getNewQuestion = () => {
@@ -477,7 +473,7 @@ getNewQuestion = () => {
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
-  colorCountry(questionIndex);
+  document.querySelector('#' + currentQuestion.id).style.fill = "yellow";
   
   answers.forEach(answer => {
     const number = answer.dataset["number"];
@@ -487,12 +483,6 @@ getNewQuestion = () => {
   availableQuestions.splice(questionIndex, 1);
 
   acceptingAnswers = true;
-};
-
-let currentVector;
-function colorCountry (vectorNumber) {
-  vectorNumber = vectorNumber + 1
-  currentVector = document.querySelector("#Vector_" + vectorNumber).style.fill= "yellow";
 };
 
 answers.forEach(answer => {
