@@ -59,6 +59,11 @@ i {
   transform: translate(-50%, -10%);
 }
 
+path {
+  stroke: black;
+  fill: purple;
+}
+
 footer {
   background-color: #4A563D;
   position: fixed;
