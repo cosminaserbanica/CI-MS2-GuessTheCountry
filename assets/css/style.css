@@ -39,7 +39,6 @@ a:hover {
   font-weight: bold;
   margin: 25px;
   border-radius: 20px;
-  width: 100%;
 }
 
 .main-menu:hover {
@@ -185,6 +184,10 @@ input {
   opacity: 0;
 }
 
+.container-fluid {
+  padding: 0 !important;
+}
+
 .quiz-modal {
   background-color: grey;
   border-radius: 15px;
@@ -275,4 +278,9 @@ body{
   margin: 0;
   padding: 0;
   background-color: rgb(122, 167, 182);
+}
+
+.quiz-container {
+  height: 100vh;
+  vertical-align: middle;
 }
