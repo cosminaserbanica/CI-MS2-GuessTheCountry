@@ -39,6 +39,7 @@ a:hover {
   font-weight: bold;
   margin: 25px;
   border-radius: 20px;
+  width: 100%;
 }
 
 .main-menu:hover {
