@@ -493,6 +493,11 @@ answers.forEach(answer => {
 
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
+    if (selectedAnswer == currentQuestion.correctAnswer) {
+      document.querySelector('#' + currentQuestion.id).style.fill = "green";
+    }else{
+      document.querySelector('#' + currentQuestion.id).style.fill = "red";
+    }
     getNewQuestion();
   })
 })
