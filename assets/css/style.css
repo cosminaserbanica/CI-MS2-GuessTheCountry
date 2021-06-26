@@ -175,6 +175,10 @@ input {
   cursor: pointer;
 }
 
+#Europe {
+  opacity: 0;
+}
+
 .quiz-modal {
   background-color: grey;
   border-radius: 15px;
@@ -226,6 +230,8 @@ input {
   color: #fff;
   text-shadow: purple;
   overflow: hidden;
+  text-align: center;
+  height: 100vh;
 }
 
 .time-left-animation {
