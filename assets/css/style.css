@@ -281,6 +281,14 @@ body{
 }
 
 .quiz-container {
-  height: 100vh;
-  vertical-align: middle;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.quiz-score {
+  margin-top: 10px;
+  color: #fff;
+  padding: 6px;
+  background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
+  border-radius: 10px;
 }
