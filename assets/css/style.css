@@ -221,21 +221,6 @@ input {
   width: 100%;
 }
 
-
-#start-game {
-  padding: 20px;
-  background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
-  opacity: 0.8;
-  text-align: center;
-  font-size: 20px;
-  color: rgb(205, 235, 197);
-  font-weight: bold;
-  margin: 25px;
-  border-radius: 20px;
-  outline: none !important;
-  vertical-align: middle;
-}
-
 #time-left {
   font-size: 50px;
   color: #fff;
