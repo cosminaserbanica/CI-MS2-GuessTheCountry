@@ -455,7 +455,7 @@ let questionsList = [
 //CONSTANTS
 
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 43;
+const MAX_QUESTIONS = 42;
 
 playGame = () => {
   questionCounter = 1;
@@ -465,7 +465,7 @@ playGame = () => {
 };
 
 getNewQuestion = () => {
-  if (availableQuestions.length === 0 || questionCounter>= MAX_QUESTIONS){
+  if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
     //go to the end page
     return window.location.assign("/end.html");
   }
