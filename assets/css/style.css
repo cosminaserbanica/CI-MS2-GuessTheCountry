@@ -184,10 +184,6 @@ input {
   opacity: 0;
 }
 
-.container-fluid {
-  padding: 0 !important;
-}
-
 .quiz-modal {
   background-color: grey;
   border-radius: 15px;
