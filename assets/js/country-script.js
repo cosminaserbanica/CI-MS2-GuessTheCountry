@@ -455,10 +455,10 @@ let questionsList = [
 //CONSTANTS
 
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 42;
+const MAX_QUESTIONS = 43;
 
 playGame = () => {
-  questionCounter = 0;
+  questionCounter = 1;
   score = 0;
   availableQuestions = [...questionsList];
   getNewQuestion();
@@ -485,6 +485,9 @@ getNewQuestion = () => {
   acceptingAnswers = true;
 };
 
+let userScore = document.querySelector('.user-score');
+let questionInfo = document.querySelector('.current-question');
+
 answers.forEach(answer => {
   answer.addEventListener('click', e => {
     if(!acceptingAnswers) return;
@@ -494,11 +497,15 @@ answers.forEach(answer => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
     if (selectedAnswer == currentQuestion.correctAnswer) {
+
+      score = score + CORRECT_BONUS;
+      userScore.innerHTML = "Current Score: " + score;
       document.querySelector('#' + currentQuestion.id).style.fill = "green";
     }else{
       document.querySelector('#' + currentQuestion.id).style.fill = "red";
     }
-    getNewQuestion();
+    questionInfo.innerHTML = "Question " + questionCounter + " of 42";
+    getNewQuestion(); 
   })
 })
 
