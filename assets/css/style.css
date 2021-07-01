@@ -84,7 +84,7 @@ footer {
 .social-icons i {
   color: white;
   font-size: 18px;
-  padding: 18px 25px;
+  padding: 18px;
 }
 
 .social-icons i:hover {
@@ -184,10 +184,9 @@ input {
   opacity: 0;
 }
 
-.quiz-modal {
+.quiz-modal, .end-modal {
   background-color: #797676;
   border-radius: 15px;
-  margin-top: 20px;
   z-index: inherit;
   text-align: center;
   align-items: center;
@@ -196,8 +195,41 @@ input {
   overflow: hidden;
   overflow-y: auto;
   opacity: 0;
+  position: absolute;
+  margin-top:5px;
 }
 
+.end-modal {
+  pointer-events: none;
+  font-size: 10px;
+  margin-top:10vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.end-modal h3 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.end-modal h4 {
+  padding-bottom: 20px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.end-modal p {
+  padding-top: 15px;
+  font-size: 10px;
+  color: #fff;
+}
+
+.end-container {
+  width: 100%; 
+  justify-content: center;
+}
 
 #question, .quiz-info, #question-timer {
   color: #fff;
@@ -211,7 +243,7 @@ input {
   padding: 10px;
 }
 
-.choice-container {
+.choice-container, .end-options{
   background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
   display: flex;
   margin-bottom: 0.5rem;
@@ -257,11 +289,13 @@ input {
 
 .quiz-area { 
   text-align: center;
+  position: relative;
+  width: 100%;
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
   .quiz-area {
-    margin-top: 10%;
+    margin-top: 5%;
   }
 
   .choice-container:hover {
@@ -271,7 +305,19 @@ input {
 }
 
 @media screen and (min-width: 768px) {
-  .choice-prefix, .choice-text, #question, .quiz-info, #question-timer {
+  .choice-prefix, .choice-text, #question, .quiz-info, #question-timer{
+    font-size: 15px;
+  }
+
+  .end-modal h3 {
+    font-size: 25px;
+  }
+  
+  .end-modal h4 {
+    font-size: 20px;
+  }
+  
+  .end-modal p {
     font-size: 15px;
   }
 }
