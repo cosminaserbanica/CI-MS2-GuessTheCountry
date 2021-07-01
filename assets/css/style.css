@@ -185,7 +185,7 @@ input {
 }
 
 .quiz-modal {
-  background-color: grey;
+  background-color: #797676;
   border-radius: 15px;
   margin-top: 20px;
   z-index: inherit;
