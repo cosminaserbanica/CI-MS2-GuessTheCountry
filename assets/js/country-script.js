@@ -5,6 +5,7 @@ const timeLeftDisplay = document.querySelector('#time-left');
 const quizModal = document.querySelector('.quiz-modal');
 const quizMap = document.querySelector('#Europe');
 const questionTime = document.querySelector('#question-timer');
+const endModal = document.querySelector('.end-modal');
 
 let timeLeft = 3;
 
@@ -487,7 +488,10 @@ playGame = () => {
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
     //go to the end page
-    return window.location.assign("/end.html");
+    quizModal.style.opacity= '0';
+    quizModal.style.pointerEvents= 'none';
+    endModal.style.opacity='1';
+    endModal.style.pointerEvents= 'all';
   }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
