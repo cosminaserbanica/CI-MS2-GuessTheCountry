@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', countDown);
 const timeLeftDisplay = document.querySelector('#time-left');
 const quizModal = document.querySelector('.quiz-modal');
 const quizMap = document.querySelector('#Europe');
+const questionTime = document.querySelector('#question-timer');
 
 let timeLeft = 3;
 
@@ -14,10 +15,29 @@ function countDown(){
       timeLeftDisplay.style.display = "none";
       quizModal.style.opacity='1';
       quizMap.style.opacity='1';
+      questionTimer(5);
     }
     timeLeftDisplay.innerHTML = timeLeft
     timeLeft -=1
     timeLeftDisplay.classList.add('time-left-animation')
+  }, 1000)
+}
+
+let resetTimer = "False";
+
+function questionTimer(timeLeft){
+  setInterval(function(){
+    if (resetTimer === "True") {
+      clearInterval(timeLeft = 5)
+      resetTimer = "False"
+    } else if (timeLeft < 0){
+      clearInterval(timeLeft = 5)
+      document.querySelector('#' + currentQuestion.id).style.fill = "red";
+      questionInfo.innerHTML = "Question " + questionCounter + " of 42";
+      getNewQuestion();
+    }
+    questionTime.innerHTML = "00:0" + timeLeft
+    timeLeft -=1
   }, 1000)
 }
 
@@ -474,7 +494,7 @@ getNewQuestion = () => {
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
   document.querySelector('#' + currentQuestion.id).style.fill = "yellow";
-  
+
   answers.forEach(answer => {
     const number = answer.dataset["number"];
     answer.innerText = currentQuestion["answer" + number];
@@ -506,6 +526,7 @@ answers.forEach(answer => {
     }
     questionInfo.innerHTML = "Question " + questionCounter + " of 42";
     getNewQuestion(); 
+    resetTimer = "True";
   })
 })
 
