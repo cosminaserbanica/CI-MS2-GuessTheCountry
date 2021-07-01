@@ -199,11 +199,12 @@ input {
 }
 
 
-#question, .quiz-info {
+#question, .quiz-info, #question-timer {
   color: #fff;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 10px;
   padding-top: 10px;
+  margin-bottom: 0;
 }
 
 #answers {
@@ -225,6 +226,7 @@ input {
 .choice-prefix, .choice-text {
   margin: 0.2rem;
   padding: 0.4rem;
+  font-size: 10px;
 }
 
 .choice-text {
@@ -265,6 +267,12 @@ input {
   .choice-container:hover {
     cursor: pointer;
     color: #4A563D;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .choice-prefix, .choice-text, #question, .quiz-info, #question-timer {
+    font-size: 15px;
   }
 }
 
