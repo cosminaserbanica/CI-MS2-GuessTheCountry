@@ -280,6 +280,7 @@ input {
   overflow: hidden;
   text-align: center;
   height: 100vh;
+  margin-top: 15%;
 }
 
 .time-left-animation {
