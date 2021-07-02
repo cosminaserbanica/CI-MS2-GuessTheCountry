@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 img {
   height: 100vh;
   width: 2000px;
@@ -13,6 +15,23 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  margin-top: 15px;
+}
+
+.europe-edition {
+  position: fixed;
+  z-index: 1;
+  color: #fff;
+  font-size: 20px;
+  top: 22%;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family:'Roboto', sans-serif;;
+}
+
+.europe-edition p {
+  margin: 0;
 }
 
 ul{
