@@ -528,11 +528,11 @@ answers.forEach(answer => {
       userScore.innerHTML = "Current Score: " + score;
       document.querySelector('#' + currentQuestion.id).style.fill = "green";
       guessedCountries = guessedCountries + 1;
-      endMessage.innerHTML = "You guessed " + guessedCountries + " countries!"
     }else{
       document.querySelector('#' + currentQuestion.id).style.fill = "red";
     }
     questionInfo.innerHTML = "Question " + questionCounter + " of 42";
+    endMessage.innerHTML = "You guessed " + guessedCountries + " countries!"
     getNewQuestion(); 
     resetTimer = "True";
   })
