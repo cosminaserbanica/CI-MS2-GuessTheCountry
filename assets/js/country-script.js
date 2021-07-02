@@ -50,6 +50,7 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let guessedCountries = 0;
 
 let questionsList = [
   {
@@ -511,6 +512,7 @@ getNewQuestion = () => {
 
 let userScore = document.querySelector('.user-score');
 let questionInfo = document.querySelector('.current-question');
+let endMessage = document.querySelector('#end-game-message');
 
 answers.forEach(answer => {
   answer.addEventListener('click', e => {
@@ -525,6 +527,8 @@ answers.forEach(answer => {
       score = score + CORRECT_BONUS;
       userScore.innerHTML = "Current Score: " + score;
       document.querySelector('#' + currentQuestion.id).style.fill = "green";
+      guessedCountries = guessedCountries + 1;
+      endMessage.innerHTML = "You guessed " + guessedCountries + " countries!"
     }else{
       document.querySelector('#' + currentQuestion.id).style.fill = "red";
     }
