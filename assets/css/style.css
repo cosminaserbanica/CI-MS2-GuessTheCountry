@@ -231,6 +231,14 @@ input {
   justify-content: center;
 }
 
+.end-options:hover {
+  cursor: pointer;
+}
+
+.end-options p:hover{
+  color: #4A563D;
+}
+
 #question, .quiz-info, #question-timer {
   color: #fff;
   font-weight: bold;
