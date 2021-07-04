@@ -532,7 +532,7 @@ answers.forEach(answer => {
       document.querySelector('#' + currentQuestion.id).style.fill = "red";
     }
     questionInfo.innerHTML = "Question " + questionCounter + " of 42";
-    endMessage.innerHTML = "You guessed " + guessedCountries + " countries!"
+    endMessage.innerHTML = "You correctly guessed " + guessedCountries + " countries out of " + MAX_QUESTIONS + "!"
     getNewQuestion(); 
     resetTimer = "True";
   })
