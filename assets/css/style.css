@@ -144,7 +144,7 @@ footer {
 }
 
 .instructions-modal, .contact-modal{
-  background-color:#4A563D;
+  background-color: #535353;
   border-radius: 15px;
   width: 600px;
   max-width: 100%;
@@ -153,7 +153,6 @@ footer {
   margin: 0;
   align-items: center;
   justify-content: center;
-  border: 5px solid rgb(153, 97, 153);
   overflow: hidden;
   overflow-y: auto;
 }
