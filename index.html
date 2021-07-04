@@ -17,6 +17,15 @@
 
     <!--FONT AWESOME-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"/>
+
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init("user_tHhBl1qIkLwA2al7VQt1e");
+      })();
+    </script>
   
   </head>
   
@@ -79,22 +88,22 @@
     <div class="contact-modal-container" id="modal3">
       <div class="contact-modal col-12 col-sm-12 col-md-6 col-lg-4">
         <p class="close-modal"><i class="fas fa-times-circle" id="close-modal3"></i></p>
-        <form class = "col-12 col-sm-12 col-md-12 col-lg-12">
+        <form class = "col-12 col-sm-12 col-md-12 col-lg-12" onsubmit="return sendMail(this);">
           <div class="row">
             <label for="firstName">First Name</label>
-            <input type="text" class="form-control" id="firstName" placeholder="First name" required>
+            <input type="text" class="form-control" name="firstname" id="firstName" placeholder="First name" required>
           </div>
           <div class="row">
             <label for="lastName">Last Name</label>
-            <input type="text" class="form-control"  id="lastName" placeholder="Last name" required>
+            <input type="text" class="form-control" name="lastname"  id="lastName" placeholder="Last name" required>
           </div>
           <div class="row">
             <label for="emaiAddress">Email Address</label>
-            <input type="email" class="form-control" id="emailAddress" placeholder="Email Address" required>
+            <input type="email" class="form-control" name="emailaddress" id="emailAddress" placeholder="Email Address" required>
           </div>
           <div class="row">
             <label for="message">Your Message</label>
-            <textarea class="form-control" id="message" placeholder="Your message here" rows="4" cols="50" required></textarea>
+            <textarea class="form-control" name="message" id="message" placeholder="Your message here" rows="4" cols="50" required></textarea>
           </div>
           <div class="row" id="submit">
             <input type= "submit" id="submit-btn">
@@ -120,6 +129,7 @@
     <!-- SCRIPT JS FILES-->
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/send-email.js"></script>
 
     <!-- BOOTSTRAP JS FILES-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
