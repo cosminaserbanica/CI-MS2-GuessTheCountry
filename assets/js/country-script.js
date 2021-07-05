@@ -27,9 +27,10 @@ function countDown(){
 }
 
 let resetTimer = "False";
+let eachQuestionTimer;
 
 function questionTimer(timeLeft){
-  setInterval(function(){
+  eachQuestionTimer = setInterval(function(){
     if (resetTimer === "True") {
       clearInterval(timeLeft = 5)
       resetTimer = "False"
@@ -495,6 +496,7 @@ getNewQuestion = () => {
     endModal.style.opacity='1';
     endModal.style.pointerEvents= 'all';
     clearInterval(countDownTimer);
+    clearInterval(eachQuestionTimer);
     return;
   }
   questionCounter++;
