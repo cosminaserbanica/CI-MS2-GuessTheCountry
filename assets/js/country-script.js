@@ -8,20 +8,22 @@ const questionTime = document.querySelector('#question-timer');
 const endModal = document.querySelector('.end-modal');
 
 let timeLeft = 3;
+let countDownTimer;
 
 function countDown(){
-  setInterval(function(){
+  countDownTimer = setInterval(function(){
     if (timeLeft <= 0 ) {
-      clearInterval(timeLeft = 1)
+      clearInterval(countDownTimer);
+      timeLeft = 1;
       timeLeftDisplay.style.display = "none";
       quizModal.style.opacity='1';
       quizMap.style.opacity='1';
-      questionTimer(5);
     }
     timeLeftDisplay.innerHTML = timeLeft
     timeLeft -=1
     timeLeftDisplay.classList.add('time-left-animation')
   }, 1000)
+  setTimeout(() => questionTimer(5), 3000);
 }
 
 let resetTimer = "False";
@@ -488,11 +490,12 @@ playGame = () => {
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
-    //go to the end page
     quizModal.style.opacity= '0';
     quizModal.style.pointerEvents= 'none';
     endModal.style.opacity='1';
     endModal.style.pointerEvents= 'all';
+    clearInterval(countDownTimer);
+    return;
   }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
