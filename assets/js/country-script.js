@@ -7,6 +7,16 @@ const quizMap = document.querySelector('#Europe');
 const questionTime = document.querySelector('#question-timer');
 const endModal = document.querySelector('.end-modal');
 
+const click = new Audio();
+click.src = "/assets/audio/click.mp3";
+
+const correct = new Audio();
+correct.src = "/assets/audio/correct.mp3";
+
+const wrong = new Audio();
+wrong.src = "/assets/audio/wrong.mp3";
+
+
 let timeLeft = 3;
 let countDownTimer;
 
@@ -37,6 +47,7 @@ function questionTimer(timeLeft){
     } else if (timeLeft < 0){
       clearInterval(timeLeft = 5)
       document.querySelector('#' + currentQuestion.id).style.fill = "red";
+      wrong.play();
       questionInfo.innerHTML = "Question " + questionCounter + " of 42";
       getNewQuestion();
     }
@@ -521,6 +532,7 @@ let endMessage = document.querySelector('#end-game-message');
 
 answers.forEach(answer => {
   answer.addEventListener('click', e => {
+    click.play();
     if(!acceptingAnswers) return;
 
     acceptingAnswers = "false";
@@ -531,9 +543,11 @@ answers.forEach(answer => {
 
       score = score + CORRECT_BONUS;
       userScore.innerHTML = "Current Score: " + score;
+      correct.play();
       document.querySelector('#' + currentQuestion.id).style.fill = "green";
       guessedCountries = guessedCountries + 1;
     }else{
+      wrong.play();
       document.querySelector('#' + currentQuestion.id).style.fill = "red";
     }
     questionInfo.innerHTML = "Question " + questionCounter + " of 42";
