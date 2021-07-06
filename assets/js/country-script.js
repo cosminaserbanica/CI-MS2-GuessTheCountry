@@ -7,15 +7,11 @@ const quizMap = document.querySelector('#Europe');
 const questionTime = document.querySelector('#question-timer');
 const endModal = document.querySelector('.end-modal');
 
-const click = new Audio();
-click.src = "/assets/audio/click.mp3";
+const click = new Audio("/assets/audio/click.mp3");
 
-const correct = new Audio();
-correct.src = "/assets/audio/correct.mp3";
+const correct = new Audio("/assets/audio/correct.mp3");
 
-const wrong = new Audio();
-wrong.src = "/assets/audio/wrong.mp3";
-
+const wrong = new Audio("/assets/audio/wrong.mp3");
 
 let timeLeft = 3;
 let countDownTimer;
