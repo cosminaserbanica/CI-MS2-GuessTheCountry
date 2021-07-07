@@ -209,6 +209,7 @@ input {
 
 #Europe {
   opacity: 0;
+  position: absolute;
 }
 
 .page-wrapper {
@@ -227,6 +228,7 @@ input {
   height: 40vh;
   display: flex;
   align-content: center;
+  position: relative;
 }
 
 .quiz-area { 
