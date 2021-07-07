@@ -224,7 +224,7 @@ input {
 }
 
 .quiz-section {
-  height: 40vh;
+  height: auto;
   display: flex;
   align-content: center;
 }
@@ -236,7 +236,7 @@ input {
 }
 
 .quiz-modal, .end-modal {
-  min-height: 40vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
