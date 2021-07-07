@@ -7,11 +7,34 @@ const quizMap = document.querySelector('#Europe');
 const questionTime = document.querySelector('#question-timer');
 const endModal = document.querySelector('.end-modal');
 
+const soundToggle = document.querySelector('#sound-toggle-btn');
 const click = document.querySelector('#click-sound');
-
 const correct = document.querySelector('#correct-sound');
-
 const wrong = document.querySelector('#wrong-sound');
+
+function toggleSound() {
+  if(soundToggle.classList.contains('fa-volume-up')){
+    muteOn();
+  } else if (soundToggle.classList.contains('fa-volume-mute')){
+    muteOff();
+  }
+}
+
+function muteOn() {
+  soundToggle.classList.remove('fa-volume-up');
+  soundToggle.classList.add('fa-volume-mute');
+  click.muted = true;
+  correct.muted = true;
+  wrong.muted = true;
+}
+
+function muteOff() {
+  soundToggle.classList.remove('fa-volume-mute');
+  soundToggle.classList.add('fa-volume-up');
+  click.muted = false;
+  correct.muted = false;
+  wrong.muted = false;
+}
 
 let timeLeft = 3;
 let countDownTimer;
