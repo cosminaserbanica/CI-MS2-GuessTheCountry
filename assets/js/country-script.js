@@ -1,21 +1,22 @@
 document.addEventListener('DOMContentLoaded', countDown);
 
 // Variables for countdown
+const navBar = document.querySelector('.navbar')
 const timeLeftDisplay = document.querySelector('#time-left');
 const quizModal = document.querySelector('.quiz-modal');
 const quizMap = document.querySelector('#Europe');
 const questionTime = document.querySelector('#question-timer');
 const endModal = document.querySelector('.end-modal');
 
-const soundToggle = document.querySelector('#sound-toggle-btn');
+const soundToggle = document.querySelector('#sound-toggle-btn')
 const click = document.querySelector('#click-sound');
 const correct = document.querySelector('#correct-sound');
 const wrong = document.querySelector('#wrong-sound');
 
-function toggleSound() {
-  if(soundToggle.classList.contains('fa-volume-up')){
-    muteOn();
-  } else if (soundToggle.classList.contains('fa-volume-mute')){
+function toggleSound () {
+  if(soundToggle.classList.contains('fa-volume-up')) {
+    muteOn();        
+  } else if (soundToggle.classList.contains('fa-volume-mute')) {
     muteOff();
   }
 }
@@ -45,6 +46,7 @@ function countDown(){
       clearInterval(countDownTimer);
       timeLeft = 1;
       timeLeftDisplay.style.display = "none";
+      navBar.style.opacity='1';
       quizModal.style.opacity='1';
       quizMap.style.opacity='1';
     }
@@ -561,7 +563,7 @@ answers.forEach(answer => {
     if (selectedAnswer == currentQuestion.correctAnswer) {
 
       score = score + CORRECT_BONUS;
-      userScore.innerHTML = "Current Score: " + score;
+      userScore.innerHTML = "Score: " + score;
       correct.play();
       document.querySelector('#' + currentQuestion.id).style.fill = "green";
       guessedCountries = guessedCountries + 1;
