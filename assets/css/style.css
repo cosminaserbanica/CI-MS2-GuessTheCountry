@@ -455,6 +455,36 @@ input {
   }
 }
 
+#error-page {
+  margin: 0;
+}
+
+#error-page>img {
+  margin: 0;
+  width: 100%;
+  height: 1000px;
+  object-fit: cover;
+}
+
+#error {
+  text-align: center;
+  color: #fff;
+  background-color:rgba(0, 0, 0, 0.5);
+  padding: 15px 100px 15px 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#error>p>a {
+  color: aqua;
+}
+
+#error>p>a:hover {
+  color: yellowgreen;
+}
+
 @media screen and (min-width: 1024px) {
 
   .end-modal, .end-modal h4,  .end-modal p, #question, .quiz-info, #question-timer, 
