@@ -18,6 +18,7 @@
     <!--FONT AWESOME-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"/>
 
+    <!--EMAILJS LINK -->
     <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
     </script>
@@ -30,8 +31,10 @@
   </head>
   
   <body>
-
+    <!--HOME PAGE -->
     <div class= "menu">
+
+    <!--LOGO -->
       <svg class = "col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" width="385" height="134" viewBox="0 0 385 134" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="Group 2" filter="url(#filter0_d)">
         <g id="Group 1">
@@ -71,6 +74,7 @@
       <div class="row container-fluid europe-edition">
         <p><i class="fas fa-star"></i>EUROPE EDITION</p>
       </div>
+      <!--MAIN MENU OPTIONS -->
       <ul class = "col-12 col-sm-12 col-md-6 col-lg-8 col-xl-4 ">
         <li class= "main-menu" id="open-play" onclick="location.href='guess-country.html';"><i class="fas fa-gamepad"></i>Play</li>
         <li class= "main-menu" id="open-instructions"><i class="fas fa-info-circle"></i>Instructions</li>
@@ -79,6 +83,7 @@
       <img src="assets/images/europe2bg.jpg" alt="europe map">
     </div>
 
+    <!--INSTRUCTIONS MODAL CONTAINER -->
     <div class="instructions-modal-container" id="modal2">
       <div class="instructions-modal col-12 col-sm-12 col-md-6 col-lg-4">
         <p class="close-modal"><i class="fas fa-times-circle" id="close-modal2"></i></p>
@@ -95,9 +100,13 @@
         </ol>
       </div>
     </div>
+
+    <!--CONTACT MODAL CONTAINER -->
     <div class="contact-modal-container" id="modal3">
       <div class="contact-modal col-12 col-sm-12 col-md-6 col-lg-4">
         <p class="close-modal"><i class="fas fa-times-circle" id="close-modal3"></i></p>
+
+        <!--CONTACT FORM-->
         <form class = "col-12 col-sm-12 col-md-12 col-lg-12" onsubmit="return sendMail(this);">
           <div class="row form-row">
             <label for="firstName">First Name</label>
@@ -122,6 +131,7 @@
       </div>
     </div>
     
+    <!--FOOTER-->
     <footer>
       <div class="container-fluid follow-us">
         <div class="row">
