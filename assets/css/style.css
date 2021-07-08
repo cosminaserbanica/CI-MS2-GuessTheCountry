@@ -37,7 +37,7 @@ img {
   justify-content: center;
   font-weight: bold;
   margin-bottom: 15px;
-  font-family:'Roboto', sans-serif;;
+  font-family:'Roboto', sans-serif;
 }
 
 .europe-edition p {
@@ -77,6 +77,18 @@ a:hover {
 
 i {
   margin-right: 12px;
+}
+
+#instructions-list {
+  color: #fff;
+  font-family:'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#instructions-list li {
+  margin-bottom: 10px;
+  justify-content: center;
 }
 
 .menu svg {
@@ -164,17 +176,20 @@ footer {
 
 .close-modal {
   font-size: 25px;
-  color: rgb(153, 97, 153);
+  color: #fff;
   text-align: right;
 }
 
 .close-modal>i:hover{
-  color: white;
+  color: rgb(153, 97, 153);
   cursor: pointer;
 }
 
+.form-row {
+  justify-content: flex-start !important;
+}
+
 form {
-  justify-content: center;
   margin-top: 5px;
 }
 
@@ -445,6 +460,10 @@ input {
   .end-modal, .end-modal h4,  .end-modal p, #question, .quiz-info, #question-timer, 
   #sound-toggle-btn, .choice-prefix, .choice-text, .menu-option, .end-options {
     padding: 5px;
+  }
+
+  #instructions-list {
+    font-size: 18px;
   }
 }
 
