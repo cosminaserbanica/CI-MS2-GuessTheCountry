@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', countDown);
 // Variables for countdown
 const navBar = document.querySelector('.navbar');
 const footerGame = document.querySelector('.footer-game');
+const quizBg = document.querySelector('.quiz-bg');
+
 const timeLeftDisplay = document.querySelector('#time-left');
 const quizModal = document.querySelector('.quiz-modal');
 const quizMap = document.querySelector('#Europe');
@@ -51,6 +53,7 @@ function countDown(){
       quizModal.style.opacity='1';
       quizMap.style.opacity='1';
       footerGame.style.opacity='1';
+      quizBg.style.opacity='1';
     }
     timeLeftDisplay.innerHTML = timeLeft
     timeLeft -=1
