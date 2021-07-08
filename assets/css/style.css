@@ -5,7 +5,7 @@ body{
   padding: 0;
 }
 
-img {
+#first-map {
   /* https://css-tricks.com/perfect-full-page-background-image/ */
   min-height: 100%;
   min-width: 1024px;
@@ -17,6 +17,32 @@ img {
   margin: 0;
   background-size: cover;
   filter: hue-rotate(50deg) brightness(100%) ;
+}
+
+#error-image {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-size: cover;
+}
+
+.quiz-bg {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-size: cover;
+  filter: hue-rotate(-100deg) brightness(90%) grayscale(15%);
+  opacity: 0;
 }
 
 .menu ul {
