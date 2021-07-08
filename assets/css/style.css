@@ -381,13 +381,6 @@ input {
   margin-bottom: 3px;
 }
 
-.choice-container:hover{
-  cursor: pointer;
-  color: #4A563D;
-}
-
-
-
 .choice-prefix, .choice-text, .menu-option {
   margin: 4px;
   padding: 4px;
@@ -530,5 +523,10 @@ input {
 
   #Europe {
     min-height: 85vh;
+  }
+
+  .choice-container:hover{
+    cursor: pointer;
+    color: #4A563D;
   }
 }
