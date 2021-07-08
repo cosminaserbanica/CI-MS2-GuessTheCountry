@@ -368,7 +368,7 @@ input {
   padding: 10px 10px 0 10px;
 }
 
-.choice-container, .end-options, .menu{
+.choice-container, .end-options, .nav-menu{
   background-image: linear-gradient(to bottom right, rgb(175, 175, 182), purple);
   display: flex;
   font-size: 12px;
@@ -381,10 +381,22 @@ input {
   margin-bottom: 3px;
 }
 
+.choice-container:hover{
+  cursor: pointer;
+  color: #4A563D;
+}
+
+
+
 .choice-prefix, .choice-text, .menu-option {
   margin: 4px;
   padding: 4px;
   font-size: 10px;
+}
+
+.menu-option:hover {
+  cursor: pointer;
+  color: #4A563D;
 }
 
 .choice-text {
@@ -415,6 +427,10 @@ input {
   padding:0;
 }
 
+.footer-game {
+  opacity: 0;
+}
+
 /* Media queries for iPad */
 @media screen and (min-width: 768px) {
 
@@ -440,7 +456,7 @@ input {
     font-size: 22.5px;
   }
   
-  .choice-container, .end-options, .menu{
+  .choice-container, .end-options, .nav-menu{
     font-size: 18px;
     margin: 5px;
   }
@@ -513,6 +529,6 @@ input {
   }
 
   #Europe {
-    min-height: 100vh;
+    min-height: 85vh;
   }
 }
