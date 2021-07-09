@@ -1,4 +1,4 @@
-const openInstructions = document.getElementById('open-instructions');
+const openInstructions = document.getElementById('open-instructions'); //MODAL FOR INSTRUCTIONS- CODE SOURCED AND EDITED FROM https://www.youtube.com/watch?v=XH5OW46yO8I
 const modal2 = document.getElementById('modal2');
 const closeModal2 = document.getElementById('close-modal2');
 
@@ -10,7 +10,7 @@ closeModal2.addEventListener('click', () => {
   modal2.classList.remove('show-modal')
 });
 
-const openContact = document.getElementById('open-contact');
+const openContact = document.getElementById('open-contact'); //MODAL FOR CONTACT FORM - CODE SOURCED AND EDITED FROM https://www.youtube.com/watch?v=XH5OW46yO8I
 const modal3 = document.getElementById('modal3');
 const closeModal3 = document.getElementById('close-modal3');
 
@@ -22,7 +22,7 @@ closeModal3.addEventListener('click', () => {
   modal3.classList.remove('show-modal')
 });
 
-// Close modal by clicking anywhere outside of the modal area
+// CLOSE MODAL BY CLICKING OUTSIDE THE MODAL AREA
 window.onclick = function(event) {
   if (event.target == modal2) {
     modal2.classList.remove('show-modal')

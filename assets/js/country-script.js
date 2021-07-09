@@ -1,21 +1,24 @@
 document.addEventListener('DOMContentLoaded', countDown);
 
-// Variables for countdown
-const navBar = document.querySelector('.navbar');
-const footerGame = document.querySelector('.footer-game');
-const quizBg = document.querySelector('.quiz-bg');
 
-const timeLeftDisplay = document.querySelector('#time-left');
-const quizModal = document.querySelector('.quiz-modal');
-const quizMap = document.querySelector('#Europe');
-const questionTime = document.querySelector('#question-timer');
-const endModal = document.querySelector('.end-modal');
+const navBar = document.querySelector('.navbar'); //VARIABLE FOR NAVBAR
+const footerGame = document.querySelector('.footer-game');//VARIABLE FOR FOOTER
+const quizBg = document.querySelector('.quiz-bg');//VARIABLE FOR BACKGROUND IMAGE ON QUIZ PAGE
 
-const soundToggle = document.querySelector('#sound-toggle-btn')
+const timeLeftDisplay = document.querySelector('#time-left');//VARIABLE FOR COUNTDOWN
+const quizModal = document.querySelector('.quiz-modal');//VARIABLE FOR MODAL CONTAINING THE QUIZ
+const quizMap = document.querySelector('#Europe');//VARIABLE FOR MAP
+const questionTime = document.querySelector('#question-timer'); //VARIABLE FOR QUESTION TIMER
+const endModal = document.querySelector('.end-modal');//VARIABLE FOR GAME OVER MODAL WHICH POPS UP AT THE END OF GAME
+
+const soundToggle = document.querySelector('#sound-toggle-btn') //VARIABLE FOR SOUND TOGGLE
+
+//VARIABLES FOR AUDIO
 const click = document.querySelector('#click-sound');
 const correct = document.querySelector('#correct-sound');
 const wrong = document.querySelector('#wrong-sound');
 
+//FUNCTIONS FOR CONTROLING SOUND- TOGGLE
 function toggleSound () {
   if(soundToggle.classList.contains('fa-volume-up')) {
     muteOn();        
@@ -41,8 +44,9 @@ function muteOff() {
 }
 
 let timeLeft = 3;
-let countDownTimer;
+let countDownTimer; //NAME FOR INTERVAL USED FOR COUNTDOWN BEFORE STARTING GAME
 
+//FUNCTION FOR INTERVAL USED FOR COUNTDOWN BEFORE STARTING GAME- CODE SOURCED AND EDITED FROM https://www.youtube.com/watch?v=vSV_Ml2_A88
 function countDown(){
   countDownTimer = setInterval(function(){
     if (timeLeft <= 0 ) {
@@ -63,8 +67,9 @@ function countDown(){
 }
 
 let resetTimer = "False";
-let eachQuestionTimer;
+let eachQuestionTimer;//VARIABLE FOR QUESTION TIMER
 
+//FUNCTION FOR QUESTION TIMER
 function questionTimer(timeLeft){
   eachQuestionTimer = setInterval(function(){
     if (resetTimer === "True") {
@@ -82,6 +87,7 @@ function questionTimer(timeLeft){
   }, 1000)
 }
 
+// GAME FUNCTION VARIABLES- CODE SOURCED AND EDITED FROM https://www.youtube.com/playlist?list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF
 const question = document.getElementById('question');
 const answers = Array.from(document.getElementsByClassName('choice-text'));
 
@@ -91,6 +97,8 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let guessedCountries = 0;
+
+//DATA FROM JSON FILE
 
 let questionsList = [
   {
@@ -514,11 +522,10 @@ let questionsList = [
   }
 ]
 
-//CONSTANTS
+const CORRECT_BONUS = 10; // HOW MUCH A CORRECT ANSWER IS
+const MAX_QUESTIONS = 42; //HOW MANY QUESTIONS UNTIL END OF GAME
 
-const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 42;
-
+//PLAY GAME FUNCTION
 playGame = () => {
   questionCounter = 1;
   score = 0;
@@ -526,7 +533,9 @@ playGame = () => {
   getNewQuestion();
 };
 
+//GETTING NEW QUESTION
 getNewQuestion = () => {
+  //END OF GAME
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
     quizModal.style.opacity= '0';
     quizModal.style.pointerEvents= 'none';
@@ -536,45 +545,47 @@ getNewQuestion = () => {
     clearInterval(eachQuestionTimer);
     return;
   }
-  questionCounter++;
-  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  questionCounter++;//INCREMENT TO 1
+  const questionIndex = Math.floor(Math.random() * availableQuestions.length);//AMOUNT EQUAL TO HOW MANY QUESTIONS ARE LEFT FROM ARRAY
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
-  document.querySelector('#' + currentQuestion.id).style.fill = "yellow";
+  document.querySelector('#' + currentQuestion.id).style.fill = "yellow";//TURN CURRENT VECTOR TO YELLOW
 
-  answers.forEach(answer => {
+  answers.forEach(answer => {//ITERATE THROUGH ANSWERS
     const number = answer.dataset["number"];
     answer.innerText = currentQuestion["answer" + number];
   });
   
-  availableQuestions.splice(questionIndex, 1);
+  availableQuestions.splice(questionIndex, 1); //REMOVE USED QUESTION
 
-  acceptingAnswers = true;
+  acceptingAnswers = true;//ALLOW USER TO ANSWER
 };
 
+// VARIABLES FOR DISPLAYING SCORE, CURRENT QUESTION NUMBER AND END OF GAME MESSAGE
 let userScore = document.querySelector('.user-score');
 let questionInfo = document.querySelector('.current-question');
 let endMessage = document.querySelector('#end-game-message');
 
+//LISTEN FOR USER ANSWER
 answers.forEach(answer => {
   answer.addEventListener('click', e => {
-    click.play();
-    if(!acceptingAnswers) return;
+    click.play();//PLAY CLICK SOUND WHEN CLICK
+    if(!acceptingAnswers) return; //IGNORE IF NOT READY
 
     acceptingAnswers = "false";
 
     const selectedChoice = e.target;
-    const selectedAnswer = selectedChoice.dataset["number"];
+    const selectedAnswer = selectedChoice.dataset["number"];//MATCHES CORRECT ANSWER BASED ON NUMBER
     if (selectedAnswer == currentQuestion.correctAnswer) {
 
-      score = score + CORRECT_BONUS;
-      userScore.innerHTML = "Score: " + score;
-      correct.play();
-      document.querySelector('#' + currentQuestion.id).style.fill = "green";
-      guessedCountries = guessedCountries + 1;
+      score = score + CORRECT_BONUS; //UPDATES USER SCORE
+      userScore.innerHTML = "Score: " + score;//DISPLAYS USER SCORE
+      correct.play();//PLAYS CORRECT SOUND
+      document.querySelector('#' + currentQuestion.id).style.fill = "green";//TURNS COUNTRY TO GREEN FOR CORRECT ANSWER
+      guessedCountries = guessedCountries + 1;//INCREMENTS NUMBER OF CORRECT ANSWERS TO 1
     }else{
-      wrong.play();
-      document.querySelector('#' + currentQuestion.id).style.fill = "red";
+      wrong.play();//PLAYS WRONG SOUND
+      document.querySelector('#' + currentQuestion.id).style.fill = "red";//TURNS COUNTRY TO RED FOR WRONG ANSWER
     }
     questionInfo.innerHTML = "Question " + questionCounter + " of 42";
     endMessage.innerHTML = "You correctly guessed " + guessedCountries + " countries out of " + MAX_QUESTIONS + "!"
@@ -583,4 +594,5 @@ answers.forEach(answer => {
   })
 })
 
+//CALLS THE PLAY GAME FUNCTION
 playGame();

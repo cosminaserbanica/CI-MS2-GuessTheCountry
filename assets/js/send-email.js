@@ -1,4 +1,4 @@
-function sendMail(contactForm) {
+function sendMail(contactForm) { //CODE SOURCED AND EDITED FROM CODE INSTITUTE TUTORIAL
   emailjs.send("service_4jddcba","template_h0010cm", {
     "from_name": contactForm.firstname.value,
     "from_email": contactForm.emailaddress.value,
