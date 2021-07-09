@@ -1,6 +1,6 @@
-# Guess The Country
+# Guess The Country- Europe Edition!
 
-![Guess The Country Mockup Images](assets/images/mockup.png)
+![Guess The Country Mockup Images](/assets/images/mockup.PNG)
 
 [View the live project here](https://cosminaserbanica.github.io/CI-MS2-GuessTheCountry/)
 
