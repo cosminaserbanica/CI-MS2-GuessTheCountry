@@ -123,7 +123,7 @@ With the previously identified strategy and scope, the ideal structure was agree
 ### Design
 
 #### Colour Scheme
-The main colours used throughout the website are a shade of kaki for the background, a dark gray for the nav bar, the footer and the modals and purple for the buttons. White font has been used throughout the application to meet contrast standards. 
+The main colours used throughout the website are a shade of khaki for the background, a dark gray for the nav bar, the footer and the modals and purple for the buttons. White font has been used throughout the application to meet contrast standards. 
 
 ![](assets/images/colors.PNG)
 
@@ -139,3 +139,74 @@ The background images used on the main page, respectively on the 404 error page 
 The background image used on the quiz page has been sourced from [WallpaperAccess](https://wallpaperaccess.com/ "Link to https://www.wallpaperaccess.com").
 
 The Map of Europe in SVG format has been sourced from [SimpleMaps](https://https://simplemaps.com/ "Link to https://www.simplemaps.com") and edited by the developer in [Figma](https://https://figma.com/ "Link to https://www.figma.com") in order to get each country attribute (ex: vector id).
+- Original Earth Globe SVG before being edited by the developer:
+![](assets/images/originaleurope.PNG)
+
+The Logo Guess the Country has been created by the developer using SVG image from [Undraw](https://undraw.co/illustrations "Link to https://www.simplemaps.com") and edited to achieve the end result in [Figma](https://https://figma.com/ "Link to https://www.figma.com").
+- Original Earth Globe SVG before being edited by the developer to achieve the end result (current logo):
+![](assets/images/originalsvg.PNG)
+
+
+
+## Features
+
+### Design Features
+
+<dl>
+  <dt><a href="index.html" alt="Guess The Country Home Page">Home Page</a></dt>
+  <dd>The Home Page design was meant to be simplistic to improve the user experience, containing the following elements:
+     <ul>
+          <li><strong>The Logo</strong> - Contains a text iterating the name of the web application surrounding the Earth Globe, to highlight the profile or the quiz - geography. 
+          </li>
+          <li><strong>Europe Edition</strong> The developer felt the need to mention that this version of the game is Europe Edition, so the user can expect to find the Europe Map only in this current version. More maps of other continents will be made available in the future.
+          </li>
+          <li><strong>The menu</strong> - Positioned in the center of the page, with only 3 controls (Play game, Instructions and Contact) it enables the user to access the game quickly, with minimum of clicks, as well as the instructions modal and the contact form. 
+          </li>
+          <li><strong>The footer</strong> - Positioned at the bottom of the page, enables the user to connect with the developer on social media platforms.
+          </li>
+     </ul>
+  </dd>
+
+<dl>
+  <dt><a href="guess-country.html" alt="Guess the country Page">Quiz page</a></dt>
+  <dd>The Quiz Page is divided in two sections, one containing the Europe Map, and the other containing the quiz modal, and the modal for the end of the game. 
+     <ul>
+          <li><strong>The Countdown</strong> - When the page is loaded, a 3 seconds countdown will take place in order to prepare the user for the start of the quiz.
+          </li>
+          <li><strong>Europe Map</strong> - The blank Map contains all the countries from the European continent in the shape of Vectors. The developer chose to use the SVG because of the need to call different Vectors while building the quiz logic. Every country gets highlighted in yellow when the question loads; It turns green if the user guesses which country it is, or red if the user guesses wrong. The Map displays only when the countdown has ended.
+          </li>
+          <li><strong>The Quiz Modal</strong> - When the countdown has ended, the quiz modal displays on the left side of the screen on desktop, or underneath the Map on mobile or tablet. The Quiz Modal contains the question, the multiple choice answers, the timer for each question, the score and the toggle for sound.
+          </li>
+          <li><strong>End of Game Modal</strong> - Once all 42 questions have been displayed, the Quiz Modal will hide and the end of game modal will appear. This modal informs the user about how many questions they have guessed correctly out of the 42 and give the user the option to either play again or return to home page.
+          </li>
+          <li><strong>Nav Bar</strong> - The developer has added a Nav Bar at the top of the page to improve the user experience by enabling the user to either restart game anytime during the quiz either return to Home Page. The nav bar displays after the countdown has ended.
+          </li>
+          <li><strong>The footer</strong> - Positioned at the bottom of the page, enables the user to connect with the developer on social media platforms.
+          </li>
+     </ul>
+  </dd>
+
+### Existing Features
+- **Play Game Button** - The first option on the home page menu, when clicked, it directs the user to the quiz page.
+- **Instructions Button** - Situated right underneath the Play Game Button, when clicked, it opens up the **Instructions Modal** where the user can find details on how to play the game. The modal can be closed by either clicking on the **X icon** on the right top corner of the modal, either by clicking anywhere outside the modal window.
+- **Contact Button** - The last button in the menu, when clicked it opens up a modal containing the contact form, which the user can fill in to get in touch with the developer. The modal can be closed by either clicking on the **X icon** on the right top corner of the modal, either by clicking anywhere outside the modal window.
+- **Email JS API** - Using guidance from the Code Institute tutoring video, the developer has implemented this API to this web application. When the user submits the contact form, the developer will receive their message in their personal inbox.
+![](assets/images/message.PNG) 
+- **Alert for message sent** - Once the user has clicked **submit** on the form, a pop up alert will let the user know what the message has been sent.
+![](assets/images/alert.PNG)
+- **Social Icons** - Situated in the footer, they are being displayed on every page.
+- **Header Navigation Bar** - Displayed on every page to facilitate navigation.
+- **Countdown** - Right before displaying all the content of the quiz page, there will be a 3 seconds countdown to let the user prepare for the start of the quiz.
+- **SVG Map of Europe** - An SVG map where each each country is being automatically highlighted to point out which country the user has to guess.
+- **Beat the clock** - A timer for each question. The user has 5 seconds to select an answer. If the user does not select an answer within the 5 seconds, the highlighted country in the map will turn red, as this will be classed as a missed/wrong answer.
+- **Sound on/off** - Sound has been added to the quiz, for the click event, as well as the correct or wrong answers. The user can turn the sound off by clicking on the sound icon at the top right corner of the modal.
+- **Question Counter** - Question counter has been implemented to inform the user how far in the game they currently are. 
+- **Score** - For each question answered correctly the user gets 10 points.
+- **404 page** - A 404 Error page has been created to re-direct the user back to the Home page.
+
+### Features to Implement in the future
+- **The rest of the continents**
+     - **Feature** - An option for the user to select continents, other than Europe and guess the countries from there.
+     - **Reason for not implementing it** - One continent is enough to meet the requirements for this project at this current stage.
+      - **Feature** - An option for the user to Register, Log in, save their current score and share their progress on Social Media.
+      - **Reason for not implementing it** - This feature will need a full stack development. The developer does not yet have the knowledge to develop it.
