@@ -191,11 +191,13 @@ The Logo Guess the Country has been created by the developer using SVG image fro
 - **Instructions Button** - Situated right underneath the Play Game Button, when clicked, it opens up the **Instructions Modal** where the user can find details on how to play the game. The modal can be closed by either clicking on the **X icon** on the right top corner of the modal, either by clicking anywhere outside the modal window.
 - **Contact Button** - The last button in the menu, when clicked it opens up a modal containing the contact form, which the user can fill in to get in touch with the developer. The modal can be closed by either clicking on the **X icon** on the right top corner of the modal, either by clicking anywhere outside the modal window.
 - **Email JS API** - Using guidance from the Code Institute tutoring video, the developer has implemented this API to this web application. When the user submits the contact form, the developer will receive their message in their personal inbox.
+
 ![](assets/images/message.PNG) 
 - **Alert for message sent** - Once the user has clicked **submit** on the form, a pop up alert will let the user know what the message has been sent.
+
 ![](assets/images/alert.PNG)
 - **Social Icons** - Situated in the footer, they are being displayed on every page.
-- **Header Navigation Bar** - Displayed on every page to facilitate navigation.
+- **Navigation Bar** - Displayed only on quiz page to enable the user to return to Home page or Restart Game. 
 - **Countdown** - Right before displaying all the content of the quiz page, there will be a 3 seconds countdown to let the user prepare for the start of the quiz.
 - **SVG Map of Europe** - An SVG map where each each country is being automatically highlighted to point out which country the user has to guess.
 - **Beat the clock** - A timer for each question. The user has 5 seconds to select an answer. If the user does not select an answer within the 5 seconds, the highlighted country in the map will turn red, as this will be classed as a missed/wrong answer.
@@ -208,5 +210,26 @@ The Logo Guess the Country has been created by the developer using SVG image fro
 - **The rest of the continents**
      - **Feature** - An option for the user to select continents, other than Europe and guess the countries from there.
      - **Reason for not implementing it** - One continent is enough to meet the requirements for this project at this current stage.
-      - **Feature** - An option for the user to Register, Log in, save their current score and share their progress on Social Media.
-      - **Reason for not implementing it** - This feature will need a full stack development. The developer does not yet have the knowledge to develop it.
+
+- **Create account**
+     - **Feature** - An option for the user to Register, Log in, save their current score and share their progress on social media.
+     - **Reason for not implementing it** - This feature will need a full stack development. The developer does not yet have the knowledge to develop it.
+
+## Issues and Bugs 
+During the development I ran into a couple of issues that required more time to solve in order to implement the desired functionality. The most important of them are described below:
+
+**Question timer** - The question timer was not working properly on browsers like Mozilla Firefox and Brave. What made this issue particularly challenging was the fact that it could not be caught during production as the timer was working properly on Chrome. The issue has been fixed after discussing with Student Support, by naming the intervals to avoid creating new intervals every second and using the clearInterval() method. 
+
+![](assets/images/timerBug.gif)
+
+**End of game modal** - When the quiz was finished, the quiz modal would not hide, which made the end of game modal overlap it. Issue has been fixed by clearing the interval.
+
+![](assets/images/modalBug.PNG)
+
+**SVG Map** - SVG was not displaying on ios mobile devices. After a conversation with Student Support, we found a similar topic on [Stack Overflow](https://stackoverflow.com/questions/4504942/mobile-safari-svg-problem) where it was mentioned that some browsers like Safari can have difficulties reading SVGs due to the lack of positioning context of the parent's region. Therefore, setting position: relative; to the parent container and position: absolute; to the svg has solved the issue. 
+
+**Email JS**- The developer has initially set up the service on Yahoo, which has initially passed the test. However, the next morning it stopped working, the test was failing, returning a Mail Error 550 Mailbox Unavailable. After researching this type of error the developer found that this is a common [Yahoo issue](https://tinyurl.com/8uxm7hu3) The service has been then changed to Gmail. No issues since.
+
+**MP3 sound** - The sound for correct answer was only playing for every other correct answer. For example, if the user had three consecutive correct answers, the sound would only play for the first one, skipping the second one, playing for the third one and so on. After troubleshooting it turned out that the MP3 was too long, the MP3 file was still going even after the sound had stopped. Therefore, the sound could not overlap the previous one. The MP3 has then been cropped using [Clideo](https://clideo.com/), which fixed the issue.
+
+
