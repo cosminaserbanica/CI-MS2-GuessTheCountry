@@ -106,3 +106,16 @@ After defining the strategy, the scope was developed based on the following requ
           - Be able to find links to external sites in order to connect with the developer on social media.
           - Play the game for as many times as they want in order to achieve the desired level of knowledge.
           - Get in touch with the developer through a form that automatically sends the message to the developers personal inbox.
+
+#### Structure
+With the previously identified strategy and scope, the ideal structure was agreed to match the following diagram:
+![Site structure](assets/images/structure.PNG)
+
+#### Skeleton
+**Skeleton** has been put together using [Balsamiq wireframes](https://balsamiq.com/ "Link to Balsamiq wireframes")
+- Wireframes for desktop: 
+![](assets/images/desktop.PNG)
+- Wireframes for Ipad:
+![](assets/images/ipad.PNG)
+- Wireframes for smarthphone:
+![](assets/images/smartphone.PNG) 
