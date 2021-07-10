@@ -119,3 +119,23 @@ With the previously identified strategy and scope, the ideal structure was agree
 ![](assets/images/ipad.PNG)
 - Wireframes for smarthphone:
 ![](assets/images/smartphone.PNG) 
+
+### Design
+
+#### Colour Scheme
+The main colours used throughout the website are a shade of kaki for the background, a dark gray for the nav bar, the footer and the modals and purple for the buttons. White font has been used throughout the application to meet contrast standards. 
+
+![](assets/images/colors.PNG)
+
+#### Typography
+The fonts used are [Roboto](https://fonts.google.com/specimen/Roboto "Link to Roboto Google Font") for the Logo situated on the Main page with Sans Serif as the fallback in case of import failure and Consolas font is used for the buttons, questions and answers throughout the game.
+
+
+#### Imagery
+The images selected have been used with a main purpose of highlighting the profile of the application, which is a geography related quiz.
+
+The background images used on the main page, respectively on the 404 error page have been sourced by [Unsplash](https://unsplash.com/ "Link to https://unsplash.com/").
+
+The background image used on the quiz page has been sourced from [WallpaperAccess](https://wallpaperaccess.com/ "Link to https://www.wallpaperaccess.com").
+
+The Map of Europe in SVG format has been sourced from [SimpleMaps](https://https://simplemaps.com/ "Link to https://www.simplemaps.com") and edited by the developer in [Figma](https://https://figma.com/ "Link to https://www.figma.com") in order to get each country attribute (ex: vector id).
