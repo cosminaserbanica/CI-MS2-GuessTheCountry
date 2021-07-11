@@ -19,10 +19,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"/>
 
     <!--EMAILJS LINK -->
-    <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
     </script>
-    <script type="text/javascript">
+
+    <script>
       (function(){
           emailjs.init("user_tHhBl1qIkLwA2al7VQt1e");
       })();
@@ -36,8 +36,8 @@
 
     <!--LOGO -->
       <svg class = "col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4" width="385" height="134" viewBox="0 0 385 134" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g id="Group 2" filter="url(#filter0_d)">
-        <g id="Group 1">
+        <g id="Group_2" filter="url(#filter0_d)">
+        <g id="Group_1">
         <path id="Vector" d="M145.181 31.3726L141.866 33.8423L149.235 43.3931L152.549 40.9234L145.181 31.3726Z" fill="#FCFCFF"/>
         <path id="Vector_2" d="M191.442 97.9725L188.127 100.442L194.658 108.908L197.973 106.438L191.442 97.9725Z" fill="#F9F9FF"/>
         <path id="Vector_3" d="M210.652 78.4127L210.602 78.6482C210.47 79.2384 210.328 79.8234 210.175 80.4033C207.524 90.3219 201.114 98.8406 192.258 104.214C183.403 109.587 172.772 111.407 162.545 109.302C152.318 107.197 143.269 101.325 137.252 92.8909C131.235 84.4565 128.707 74.0979 130.185 63.9379C130.307 63.0941 130.458 62.2499 130.638 61.4052C132.355 53.2553 136.616 45.8536 142.827 40.2322C143.324 39.7786 143.835 39.3381 144.359 38.9107C144.721 38.6128 145.09 38.3248 145.46 38.04C153.886 31.6092 164.559 28.7036 175.189 29.9466C185.819 31.1896 195.559 36.4823 202.32 44.689C202.72 45.174 203.11 45.6707 203.487 46.1731C203.788 46.5756 204.081 46.9838 204.367 47.3978C209.999 55.5145 212.435 65.3592 211.216 75.0759C211.076 76.1873 210.888 77.2995 210.652 78.4127Z" fill="#4A563D"/>
@@ -80,7 +80,7 @@
         <li class= "main-menu" id="open-instructions"><i class="fas fa-info-circle"></i>Instructions</li>
         <li class= "main-menu" id="open-contact"><i class="fas fa-comments"></i>Contact</li>
       </ul>
-      <img id ="first-map"src="assets/images/europe2bg.jpg" alt="europe map">
+      <img id ="first-map" src="assets/images/europe2bg.jpg" alt="europe map">
     </div>
 
     <!--INSTRUCTIONS MODAL CONTAINER -->
@@ -96,7 +96,7 @@
           <li>Once you have selected your answer and the current country has changed colour, the map will then highlight a new country in <span style="color: yellow;"></span></li>
           <li>Repeat steps 3-5 until you have guessed all 42 countries</li>
           <li>After guessing all 42 countries a Game Over window will pop up, where you can choose between going back to home page or playing again</li>
-          <p>Good luck!</p>
+          <li>Good luck!</li>
         </ol>
       </div>
     </div>
@@ -117,7 +117,7 @@
             <input type="text" class="form-control" name="lastname"  id="lastName" placeholder="Last name" required>
           </div>
           <div class="row form-row">
-            <label for="emaiAddress">Email Address</label>
+            <label for="emailAddress">Email Address</label>
             <input type="email" class="form-control" name="emailaddress" id="emailAddress" placeholder="Email Address" required>
           </div>
           <div class="row form-row">
