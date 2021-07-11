@@ -232,4 +232,107 @@ During the development I ran into a couple of issues that required more time to 
 
 **MP3 sound** - The sound for correct answer was only playing for every other correct answer. For example, if the user had three consecutive correct answers, the sound would only play for the first one, skipping the second one, playing for the third one and so on. After troubleshooting it turned out that the MP3 was too long, the MP3 file was still going even after the sound had stopped. Therefore, the sound could not overlap the previous one. The MP3 has then been cropped using [Clideo](https://clideo.com/), which fixed the issue.
 
+## Technologies Used
+### Main Languages Used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5 "Link to HTML Wiki")
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets "Link to CSS Wiki")
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript "Link to Javascript Wiki")
 
+### Frameworks, Libraries & Programs Used
+- [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/ "Link to Bootstrap page")
+     - Bootstrap was used to implement the responsiveness of the site, using bootstrap classes.
+- [Google Fonts](https://fonts.google.com/ "Link to Google Fonts")
+    - Google fonts was used to import the font "Roboto" into the project.
+- [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
+     - Font Awesome was used on all pages throughout the website to import icons.
+- [Visual Studio Code](https://code.visualstudio.com/ "Link to VS Code homepage")
+     - Visual Studio Code was used for editing and version control to commit and push to GitHub.
+- [GitHub](https://github.com/ "Link to GitHub")
+     - GitHub was used to store the project after pushing.
+- [Balsamiq Wireframes](https://www.balsamiq.com/ "Link to Balsamiq homepage")
+     - Balsamiq was used in the early days to design the project.
+ - [Figma](https://www.figma.com/ "Link to Figma homepage")
+     - Figma was used to create the logo and to manipulate the SVG for the map.
+- [Clideo](https://www.clideo.com/ "Link to Clideo homepage")
+     - Clideo was used to crop MP3 sound for correct answers.    
+- [Screenfly by Bluetree](https://bluetree.ai/screenfly/ "Link to Screenfly Homepage")
+     - Screenfly by Bluetree has been used to check responsiveness.
+- [Techsini](https://techsini.com/multi-mockup/index.php)
+     - Techsini has been used to generate mock-up images.
+
+## Testing
+
+Testing information can be found in a separate testing [file](testing.md "Link to testing file")
+
+## Deployment
+
+This project was developed using [Visual Studio Code](https://code.visualstudio.com/ "Link to VS Code Homepage"), committed to git and pushed to GitHub.
+
+### Deploying on GitHub Pages
+
+The project was deployed to GitHub Pages using the following steps: 
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/cosminaserbanica/CI-MS2-GuessTheCountry "Link to GitHub Repo")
+2. At the top of the Repository, locate the "Settings" Button on the menu.
+3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. The page will automatically refresh.
+6. Scroll back down through the page to locate the now published site [Guess The Country](https://cosminaserbanica.github.io/CI-MS2-GuessTheCountry/) in the "GitHub Pages" section.
+
+### Forking the Repository
+
+By forking the GitHub Repository make a copy of the original repository to view and/or make changes without affecting the original repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/cosminaserbanica/CI-MS2-GuessTheCountry "Link to GitHub Repo")
+2. At the top of the Repository just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Creating a Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/cosminaserbanica/CI-MS2-GuessTheCountry "Link to GitHub Repo")
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/cosminaserbanica/CI-MS2-GuessTheCountry
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/cosminaserbanica/CI-MS2-GuessTheCountry
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+## Credits
+
+### Media
+- Images used for Home page background and 404 Error page background have been sourced from [Unsplash](https://unsplash.com/ "Link to Unsplash Home Page").
+- SVG used for logo has been initially sourced from [Undraw](https://undraw.co/illustrations "Link to Undraw Home Page").
+- Image used for background on the quiz page has been sourced from [Wallpaper Access](https://wallpaperaccess.com/ "Link to Wallpaper Access").
+- SVG used for Europe map has been sourced from [Simple Maps](https://simplemaps.com/ "Link to Simple Maps").
+- MP3 files used for audio during quiz have been sourced from [Zapsplat](https://www.zapsplat.com/ "Link to Zapsplat").
+
+### Code 
+During the development, especially when coming across issues, I have used documentation from the following sources, adapting the code to the current project:
+- [YouTube](https://www.youtube.com/watch?v=XH5OW46yO8I "Link to Youtube video")- on how to make a modal.
+- [YouTube](https://www.youtube.com/watch?v=vSV_Ml2_A88 "Link to Youtube Video")- on Countdown timer.
+- [Youtube](https://www.youtube.com/playlist?list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF "Link to Youtube playlist")- on quiz logic.
+- [Code Institute](https://codeinstitute.net/ "Link to Code Institute home page")- on Email JS API.
+- [CSS Tricks](https://css-tricks.com/perfect-full-page-background-image/ "Link to css tricks page")- on styling background image.
+
+## Acknowledgements
+
+- I would like to thank my mentor, Femi, for his great advice and support during the development of this project.
+- I would like to thank Code Institute for this great opportunity of learning and development of my skills.
+
+***
